@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { CheckerClient } from "./CheckerClient";
 
 export const metadata: Metadata = {
   title: "China First-Day Backup Card | China Trip Tools",
@@ -37,12 +38,7 @@ export default function CheckerPage() {
           and transport requirements with official sources before booking or traveling.
         </section>
 
-        <div className="mt-8 card p-6">
-          <p className="text-base font-black text-slate-950">El formulario interactivo entra en el siguiente checkpoint.</p>
-          <p className="mt-2 leading-7 text-slate-600">
-            Este primer paso valida la arquitectura estática, el SEO base y la presencia del aviso legal en HTML inicial.
-          </p>
-        </div>
+        <CheckerClient />
       </main>
       <SiteFooter />
     </div>
