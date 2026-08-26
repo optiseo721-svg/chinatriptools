@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { ChevronDown, Clipboard, ClipboardCheck, ExternalLink, RotateCcw } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 
@@ -19,11 +19,9 @@ type MobileDataStatus = "not_ready" | "planned" | "installed" | "tested";
 type PaymentStatus = "not_started" | "app_installed" | "card_linked" | "small_payment_tested";
 type HotelArrivalStatus = "not_ready" | "address_saved" | "address_route_saved";
 type TrainWithin24h = "no" | "yes_booked" | "yes_not_booked";
-type OfficialCheck = "yes" | "need_verify";
 type ReadinessStatus = "Critical" | "Needs action" | "Ready";
 
 type Answers = {
-  officialCheck?: OfficialCheck;
   arrivalCity?: ArrivalCity;
   arrivalTime?: ArrivalTime;
   mobileDataStatus?: MobileDataStatus;
@@ -88,12 +86,7 @@ const trainChoices: Choice<TrainWithin24h>[] = [
   { value: "yes_not_booked", label: "Sí, no reservado" }
 ];
 
-const officialChoices: Choice<OfficialCheck>[] = [
-  { value: "yes", label: "Sí" },
-  { value: "need_verify", label: "Todavía necesito verificar" }
-];
-
-const lastReviewed = "2026-08-25";
+const lastReviewed = "2026-08-26";
 
 const cityTips: Record<ArrivalCity, string> = {
   Beijing: "Confirma a qué aeropuerto llegas y deja margen suficiente para el primer traslado.",
@@ -163,8 +156,7 @@ function evaluateStatus(answers: Answers): ReadinessStatus {
     answers.paymentStatus === "app_installed" ||
     answers.paymentStatus === "card_linked" ||
     answers.hotelArrivalStatus === "address_saved" ||
-    answers.trainWithin24h === "yes_not_booked" ||
-    answers.officialCheck === "need_verify";
+    answers.trainWithin24h === "yes_not_booked";
 
   return needsAction ? "Needs action" : "Ready";
 }
@@ -186,9 +178,6 @@ function getTopActions(answers: Answers) {
   }
   if (answers.paymentStatus === "app_installed" || answers.paymentStatus === "card_linked") {
     actions.push("Prueba el pago móvil con una compra pequeña antes de depender de él.");
-  }
-  if (answers.officialCheck === "need_verify") {
-    actions.push("Verifica tu entrada o tránsito con una fuente oficial antes de reservar.");
   }
   if (answers.trainWithin24h === "yes_not_booked") {
     actions.push("Reserva o verifica tu primer tren y confirma el nombre exacto de la estación.");
@@ -373,10 +362,8 @@ export function CheckerClient() {
   const [showTrain, setShowTrain] = useState(false);
   const [generated, setGenerated] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  useEffect(() => {
-    trackEvent("checker_start", { page: "checker" });
-  }, []);
+  const startedRef = useRef(false);
+  const resultRef = useRef<HTMLDivElement>(null);
 
   const completedCount = useMemo(() => getCompletedCount(answers), [answers]);
   const canGenerate = completedCount === 5;
@@ -388,7 +375,11 @@ export function CheckerClient() {
 
   function updateAnswer<K extends keyof Answers>(key: K, value: Answers[K]) {
     setAnswers((current) => ({ ...current, [key]: value }));
-    if (key !== "officialCheck" && key !== "trainWithin24h") {
+    if (!startedRef.current && key !== "trainWithin24h") {
+      startedRef.current = true;
+      trackEvent("checker_start", { page: "checker" });
+    }
+    if (key !== "trainWithin24h") {
       trackEvent("checker_step_complete", { step: String(key), value: String(value) });
     }
   }
@@ -422,6 +413,9 @@ export function CheckerClient() {
       arrival_time: answers.arrivalTime,
       status
     });
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => resultRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    });
   }
 
   async function copyBackupCard() {
@@ -440,7 +434,8 @@ export function CheckerClient() {
     setShowTrain(false);
     setShowMoreCities(false);
     setCopied(false);
-    trackEvent("checker_start", { action: "reset" });
+    startedRef.current = false;
+    trackEvent("checker_reset", { page: "checker" });
   }
 
   return (
@@ -458,14 +453,6 @@ export function CheckerClient() {
         </div>
 
         <div className="grid gap-5">
-          <ChoiceGroup
-            label="¿Ya verificaste tu entrada o ruta de tránsito con una fuente oficial?"
-            description="Este recordatorio no decide si necesitas visa ni si puedes entrar."
-            value={answers.officialCheck}
-            choices={officialChoices}
-            onChange={(value) => updateAnswer("officialCheck", value)}
-          />
-
           <fieldset className="rounded-lg border border-slate-200 bg-slate-50 p-4">
             <legend className="px-1 text-base font-black text-slate-950">¿Dónde aterrizas?</legend>
             <p className="mt-1 text-sm leading-6 text-slate-600">Elige la ciudad donde empieza tu primer día.</p>
@@ -614,7 +601,7 @@ export function CheckerClient() {
           ].map(([label, value]) => (
             <div key={label} className="flex items-start justify-between gap-4 border-b border-slate-100 pb-2 last:border-0">
               <dt className="font-bold text-slate-500">{label}</dt>
-              <dd className="text-right font-black capitalize text-slate-950">{value}</dd>
+              <dd className="text-right font-black text-slate-950">{value}</dd>
             </div>
           ))}
         </dl>
@@ -624,7 +611,7 @@ export function CheckerClient() {
       </aside>
 
       {generated ? (
-        <div className="lg:col-span-2">
+        <div ref={resultRef} className="scroll-mt-4 lg:col-span-2">
           <section className={`rounded-lg border p-5 ${statusClass(status)}`} aria-live="polite">
             <p className="text-sm font-black uppercase">Estado del viaje</p>
             <h2 className="mt-2 text-3xl font-black">{getStatusLabel(status)}</h2>
