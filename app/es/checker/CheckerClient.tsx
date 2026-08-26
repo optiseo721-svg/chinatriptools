@@ -54,7 +54,7 @@ const moreCities: Choice<ArrivalCity>[] = [
   { value: "Chengdu", label: "Chengdu" },
   { value: "Xi'an", label: "Xi'an" },
   { value: "Hangzhou", label: "Hangzhou" },
-  { value: "Other", label: "Other" }
+  { value: "Other", label: "Otra ciudad" }
 ];
 
 const arrivalTimes: Choice<ArrivalTime>[] = [
@@ -496,6 +496,12 @@ export function CheckerClient() {
                   </button>
                 ))}
               </div>
+            ) : null}
+            {answers.arrivalCity === "Other" ? (
+              <p className="mt-3 rounded-lg border border-blue-200 bg-blue-50 p-3 text-sm font-semibold leading-6 text-blue-950">
+                Usaremos una recomendación general para el primer día. No pedimos el nombre de la ciudad para evitar datos
+                personales y mantener el resultado simple.
+              </p>
             ) : null}
             <button
               type="button"
