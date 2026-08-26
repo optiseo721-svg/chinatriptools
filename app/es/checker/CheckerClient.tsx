@@ -499,8 +499,8 @@ export function CheckerClient() {
             ) : null}
             {answers.arrivalCity === "Other" ? (
               <p className="mt-3 rounded-lg border border-blue-200 bg-blue-50 p-3 text-sm font-semibold leading-6 text-blue-950">
-                Usaremos una recomendación general para el primer día. No pedimos el nombre de la ciudad para evitar datos
-                personales y mantener el resultado simple.
+                Usaremos una guía general para tu primer día en China. Sirve para cualquier ciudad y no necesitas escribir
+                nada.
               </p>
             ) : null}
             <button
