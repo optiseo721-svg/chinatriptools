@@ -30,7 +30,11 @@ export function ArticleHero({
             {ctaLabel}
           </TrackedLink>
         </div>
-        <p className="mt-5 text-sm font-semibold text-slate-500">
+        <div className="mt-5 flex flex-col gap-1 text-sm font-semibold text-slate-500 sm:flex-row sm:gap-3">
+          <span>Por el equipo editorial de China Trip Tools</span>
+          <time dateTime="2026-08-26">Revisado el 26 de agosto de 2026</time>
+        </div>
+        <p className="mt-3 text-sm font-semibold text-slate-500">
           Esta herramienta es solo para preparar tu viaje. No ofrece asesoría legal.
         </p>
       </div>
@@ -101,7 +105,7 @@ export function InlineToolCta({ label }: { label: string }) {
 export function OfficialSourceList() {
   const links = [
     ["Visit China", "https://english.www.gov.cn/services/visitChina/"],
-    ["NIA visa-free transit policy", "https://en.nia.gov.cn/n147418/n147463/c183412/content.html"],
+    ["Tránsito sin visado - NIA", "https://es.nia.gov.cn/n32407/n32456/c183611/content.html"],
     ["12306", "https://www.12306.cn/en/index.html"]
   ];
 

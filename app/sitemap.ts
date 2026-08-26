@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const siteUrl = "https://chinatriptools.com";
-const lastModified = new Date("2026-08-25");
+const lastModified = new Date("2026-08-26");
 
 export const dynamic = "force-static";
 

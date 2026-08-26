@@ -86,7 +86,7 @@ const trainChoices: Choice<TrainWithin24h>[] = [
   { value: "yes_not_booked", label: "Sí, no reservado" }
 ];
 
-const lastReviewed = "2026-08-26";
+const lastReviewed = "26 de agosto de 2026";
 
 const cityTips: Record<ArrivalCity, string> = {
   Beijing: "Confirma a qué aeropuerto llegas y deja margen suficiente para el primer traslado.",
@@ -107,11 +107,11 @@ const officialLinks = [
   },
   {
     label: "Política de tránsito sin visa de la NIA",
-    href: "https://en.nia.gov.cn/n147418/n147463/c183412/content.html"
+    href: "https://es.nia.gov.cn/n32407/n32456/c183611/content.html"
   },
   {
     label: "Guía oficial de pagos para visitantes extranjeros",
-    href: "https://english.www.gov.cn/services/202405/27/content_WS6653eafac6d0868f4e8e753f.html"
+    href: "https://english.www.gov.cn/news/202408/22/content_WS66c71b3ec6d0868f4e8ea2b1.html"
   },
   {
     label: "FAQ oficial de 12306",

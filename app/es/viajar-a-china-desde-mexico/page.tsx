@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: "Viajar a China desde México: visa, preparación y primer día",
   description:
     "Guía práctica para viajeros mexicanos: verifica requisitos oficiales, prepara internet, pagos, hotel y tu plan de respaldo para el primer día en China.",
+  authors: [{ name: "Equipo editorial de China Trip Tools" }],
   alternates: {
     canonical: "/es/viajar-a-china-desde-mexico/"
   }

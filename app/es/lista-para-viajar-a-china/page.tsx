@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   title: "Lista para viajar a China: internet, pagos, hotel y primer día",
   description:
     "Una lista práctica para preparar tu viaje a China y evitar bloqueos el primer día: internet, eSIM, pagos, hotel, transporte y enlaces oficiales.",
+  authors: [{ name: "Equipo editorial de China Trip Tools" }],
   alternates: {
     canonical: "/es/lista-para-viajar-a-china/"
   }

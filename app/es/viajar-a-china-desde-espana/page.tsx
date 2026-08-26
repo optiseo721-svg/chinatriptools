@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: "Viajar a China desde España: preparación y primer día",
   description:
     "Revisa qué preparar antes de viajar a China desde España: entrada, visado, internet, pagos, hotel y plan de respaldo para el primer día.",
+  authors: [{ name: "Equipo editorial de China Trip Tools" }],
   alternates: {
     canonical: "/es/viajar-a-china-desde-espana/"
   }

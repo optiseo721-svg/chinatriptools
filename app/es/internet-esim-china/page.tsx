@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   title: "Internet y eSIM en China para viajeros",
   description:
     "Qué preparar antes de aterrizar en China: eSIM, roaming, Wi-Fi, mapas, pagos y respaldo si no tienes datos móviles.",
+  authors: [{ name: "Equipo editorial de China Trip Tools" }],
   alternates: {
     canonical: "/es/internet-esim-china/"
   }
