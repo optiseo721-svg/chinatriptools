@@ -69,7 +69,7 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Navegación principal" className="hidden items-center gap-2 text-sm md:flex">
           <Link className="rounded-md px-3 py-2 font-bold text-slate-700 hover:bg-slate-100" href="/es/checker/">
-            Herramienta
+            Preparar mi viaje
           </Link>
           <GuideMenu />
           <span aria-hidden="true" className="mx-1 h-6 w-px bg-slate-200" />
@@ -87,7 +87,7 @@ export function SiteHeader() {
             className="absolute right-0 top-[calc(100%+8px)] z-30 grid w-[min(19rem,calc(100vw-32px))] gap-1 rounded-lg border border-slate-200 bg-white p-3 text-sm shadow-lg"
           >
             <Link className="min-h-11 rounded-md px-3 py-3 font-bold text-slate-800 hover:bg-slate-100" href="/es/checker/">
-              Herramienta
+              Preparar mi viaje
             </Link>
             <GuideMenu mobile />
             <div className="my-1 h-px bg-slate-200" />
