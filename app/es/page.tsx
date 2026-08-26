@@ -5,7 +5,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
-  title: "China Trip Tools | Plan de respaldo para tu primer día en China",
+  title: {
+    absolute: "China Trip Tools | Plan de respaldo para tu primer día en China"
+  },
   description:
     "Crea una tarjeta de respaldo para tu primer día en China. Revisa internet, pagos, hotel, transporte y enlaces oficiales antes de aterrizar.",
   alternates: {

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "China Trip Tools",
+  title: {
+    absolute: "China Trip Tools"
+  },
   description: "Elige el idioma para preparar tu primer día en China.",
   alternates: {
     canonical: "/"

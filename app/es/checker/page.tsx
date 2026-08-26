@@ -4,7 +4,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { CheckerClient } from "./CheckerClient";
 
 export const metadata: Metadata = {
-  title: "China First-Day Backup Card | China Trip Tools",
+  title: {
+    absolute: "China First-Day Backup Card | China Trip Tools"
+  },
   description:
     "Responde 5 preguntas rápidas y genera un plan de respaldo para tu primer día en China. Sin registro, sin datos personales.",
   alternates: {
