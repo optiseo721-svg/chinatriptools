@@ -61,13 +61,13 @@ export default function InternetEsimPage() {
           ctaEventLabel="internet_esim_hero"
         />
         <article className="content-wrap py-8">
-          <ContentSection title="Why it matters">
+          <ContentSection title="Por qué importa">
             <p>
               Si aterrizas sin datos, cada pequeño paso se vuelve más lento: abrir mapas, traducir, enseñar una dirección,
               confirmar pago o contactar al hotel. Por eso la conexión debe prepararse antes de volar.
             </p>
           </ContentSection>
-          <ContentSection title="Preparation options">
+          <ContentSection title="Opciones de preparación">
             <Checklist
               items={[
                 "eSIM: útil si tu teléfono y proveedor son compatibles.",
@@ -80,7 +80,7 @@ export default function InternetEsimPage() {
             />
           </ContentSection>
           <InlineToolCta label="internet_esim_inline" />
-          <ContentSection title="What if you land without data?">
+          <ContentSection title="¿Qué hacer si aterrizas sin datos?">
             <p>
               No salgas del aeropuerto sin abrir la dirección del hotel y una ruta básica. Conéctate a Wi-Fi, toma capturas y
               prepara una alternativa de pago o transporte antes de moverte.

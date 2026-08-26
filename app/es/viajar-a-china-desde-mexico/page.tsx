@@ -56,13 +56,13 @@ export default function MexicoPage() {
           ctaEventLabel="mexico_hero"
         />
         <article className="content-wrap py-8">
-          <ContentSection title="Visa and official verification">
+          <ContentSection title="Visa y verificación oficial">
             <p>
               La búsqueda sobre visa China mexicanos tiene intención clara, pero este sitio no sustituye a la fuente oficial.
               Antes de reservar, confirma requisitos de entrada, tránsito, documentos y fechas con autoridades oficiales.
             </p>
           </ContentSection>
-          <ContentSection title="Mexico-specific emphasis">
+          <ContentSection title="Preparación para viajeros de México">
             <Checklist
               items={[
                 "Revisar visa China para mexicanos con fuente oficial.",
@@ -75,7 +75,7 @@ export default function MexicoPage() {
             />
           </ContentSection>
           <InlineToolCta label="mexico_inline" />
-          <ContentSection title="Official links">
+          <ContentSection title="Enlaces oficiales">
             <OfficialSourceList />
           </ContentSection>
           <FAQSection items={faqs} />

@@ -61,7 +61,7 @@ export default function TravelChecklistPage() {
           ctaEventLabel="travel_checklist_hero"
         />
         <article className="content-wrap py-8">
-          <ContentSection title="Quick checklist">
+          <ContentSection title="Lista rápida">
             <Checklist
               items={[
                 "Verificar entrada, visado o tránsito con fuentes oficiales.",

@@ -56,13 +56,13 @@ export default function SpainPage() {
           ctaEventLabel="spain_hero"
         />
         <article className="content-wrap py-8">
-          <ContentSection title="Country reminder">
+          <ContentSection title="Verificación oficial de entrada">
             <p>
               Verifica entrada, visa/visado y tránsito con fuentes oficiales. Este sitio no decide si puedes entrar en China;
               solo organiza una preparación práctica para el primer día.
             </p>
           </ContentSection>
-          <ContentSection title="First-day preparation">
+          <ContentSection title="Preparación para el primer día">
             <Checklist
               items={[
                 "Guardar dirección del hotel en chino.",
@@ -75,7 +75,7 @@ export default function SpainPage() {
             />
           </ContentSection>
           <InlineToolCta label="spain_inline" />
-          <ContentSection title="Official links">
+          <ContentSection title="Enlaces oficiales">
             <OfficialSourceList />
           </ContentSection>
           <FAQSection items={faqs} />

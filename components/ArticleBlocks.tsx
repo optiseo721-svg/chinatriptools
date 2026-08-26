@@ -31,7 +31,7 @@ export function ArticleHero({
           </TrackedLink>
         </div>
         <p className="mt-5 text-sm font-semibold text-slate-500">
-          This tool is for travel preparation only. It is not legal advice.
+          Esta herramienta es solo para preparar tu viaje. No ofrece asesoría legal.
         </p>
       </div>
     </section>
@@ -69,7 +69,7 @@ export function Checklist({ items }: { items: string[] }) {
 export function FAQSection({ items }: { items: FAQItem[] }) {
   return (
     <section className="border-t border-slate-200 py-8">
-      <h2 className="text-2xl font-black text-slate-950">FAQ</h2>
+      <h2 className="text-2xl font-black text-slate-950">Preguntas frecuentes</h2>
       <div className="mt-4 grid gap-3">
         {items.map((item) => (
           <details key={item.question} className="card p-4">

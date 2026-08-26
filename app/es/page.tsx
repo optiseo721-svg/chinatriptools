@@ -42,7 +42,7 @@ export default function SpanishHomePage() {
                 </Link>
               </div>
               <p className="mt-5 text-sm font-semibold text-slate-500">
-                This tool is for travel preparation only. It is not legal advice.
+                Esta herramienta es solo para preparar tu viaje. No ofrece asesoría legal.
               </p>
             </div>
 
