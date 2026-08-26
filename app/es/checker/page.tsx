@@ -5,14 +5,14 @@ import { CheckerClient } from "./CheckerClient";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "China First-Day Backup Card | China Trip Tools"
+    absolute: "Tarjeta de respaldo para tu primer día en China | China Trip Tools"
   },
   description:
     "Responde 5 preguntas rápidas y genera un plan de respaldo para tu primer día en China. Sin registro, sin datos personales.",
   alternates: {
     canonical: "/es/checker/"
   },
-  keywords: ["China First-Day Backup Card", "primer día en China", "checklist China", "viajar a China"]
+  keywords: ["tarjeta de respaldo China", "primer día en China", "checklist China", "viajar a China"]
 };
 
 export default function CheckerPage() {
@@ -21,9 +21,9 @@ export default function CheckerPage() {
       <SiteHeader />
       <main className="content-wrap py-10">
         <div className="max-w-3xl">
-          <p className="eyebrow">5 quick checks. No typing needed.</p>
+          <p className="eyebrow">5 revisiones rápidas. Sin escribir datos personales.</p>
           <h1 className="mt-3 text-4xl font-black leading-tight text-slate-950">
-            China First-Day Backup Card
+            Tarjeta de respaldo para tu primer día en China
           </h1>
           <p className="mt-4 text-lg leading-8 text-slate-600">
             Revisa los puntos que suelen bloquear a un viajero el primer día: conexión, pagos, hotel,
@@ -36,8 +36,8 @@ export default function CheckerPage() {
         </section>
 
         <section className="mt-4 rounded-lg border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-600">
-          This tool is for travel preparation only. It is not legal advice. Always verify entry, transit, payment,
-          and transport requirements with official sources before booking or traveling.
+          Esta herramienta es solo para preparación de viaje. No es asesoría legal. Verifica siempre los requisitos de
+          entrada, tránsito, pago y transporte con fuentes oficiales antes de reservar o viajar.
         </section>
 
         <CheckerClient />

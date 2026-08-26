@@ -50,7 +50,7 @@ export default function SpanishHomePage() {
               <div className="flex items-center justify-between gap-4 border-b border-slate-200 pb-4">
                 <div>
                   <p className="text-sm font-bold text-slate-500">Vista previa</p>
-                  <p className="text-xl font-black text-slate-950">First-Day Backup Card</p>
+                  <p className="text-xl font-black text-slate-950">Tarjeta de respaldo del primer día</p>
                 </div>
                 <ShieldCheck className="text-brand-green" aria-hidden="true" />
               </div>
@@ -79,8 +79,8 @@ export default function SpanishHomePage() {
         <section className="content-wrap py-10">
           <div className="grid gap-4 md:grid-cols-3">
             {[
-              ["Trip status", "Critical, Needs action o Ready sin puntuaciones confusas."],
-              ["Top 3 actions", "Solo las acciones más importantes para evitar bloqueo al llegar."],
+              ["Estado del viaje", "Crítico, requiere acción o listo, sin puntuaciones confusas."],
+              ["3 acciones principales", "Solo las acciones más importantes para evitar bloqueo al llegar."],
               ["Copia offline", "Una tarjeta clara para copiar, guardar o capturar en el móvil."]
             ].map(([title, body]) => (
               <article key={title} className="card p-5">

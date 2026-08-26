@@ -85,7 +85,7 @@ export function FAQSection({ items }: { items: FAQItem[] }) {
 export function InlineToolCta({ label }: { label: string }) {
   return (
     <aside className="my-8 rounded-lg border border-blue-200 bg-blue-50 p-5">
-      <h2 className="text-xl font-black text-blue-950">Genera tu First-Day Backup Card</h2>
+      <h2 className="text-xl font-black text-blue-950">Genera tu tarjeta de respaldo del primer día</h2>
       <p className="mt-2 leading-7 text-blue-900">
         Responde 5 preguntas rápidas y guarda una tarjeta de respaldo antes de aterrizar en China.
       </p>

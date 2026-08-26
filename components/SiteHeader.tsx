@@ -10,7 +10,7 @@ export function SiteHeader() {
         </Link>
         <nav aria-label="Navegación principal" className="hidden items-center gap-2 text-sm font-bold text-slate-700 md:flex">
           <Link className="rounded-md px-3 py-2 hover:bg-slate-100" href="/es/checker/">
-            Checker
+            Herramienta
           </Link>
           <Link className="rounded-md px-3 py-2 hover:bg-slate-100" href="/es/lista-para-viajar-a-china/">
             Lista
@@ -26,7 +26,7 @@ export function SiteHeader() {
           </Link>
         </nav>
         <Link className="button-primary md:hidden" href="/es/checker/">
-          Start
+          Empezar
         </Link>
       </div>
     </header>
