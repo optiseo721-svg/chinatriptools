@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "./BrandLogo";
 
 const socialLinks = {
   tiktok: "",
@@ -13,7 +14,7 @@ export function SiteFooter() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="content-wrap grid gap-6 py-8 text-sm text-slate-600 md:grid-cols-[1.4fr_auto_auto]">
         <div>
-          <p className="font-bold text-slate-950">China Trip Tools</p>
+          <BrandLogo href="/es/" compact />
           <p className="mt-2 max-w-2xl">
             Herramientas de preparación para viajeros. No somos una fuente oficial ni damos asesoría legal.
           </p>

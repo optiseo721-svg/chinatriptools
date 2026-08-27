@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export const metadata: Metadata = {
   title: {
@@ -15,7 +16,9 @@ export default function RootPage() {
   return (
     <main className="page-shell grid place-items-center bg-slate-50 px-4 py-12">
       <section className="card w-full max-w-xl p-8 text-center">
-        <p className="eyebrow">China Trip Tools</p>
+        <div className="flex justify-center">
+          <BrandLogo compact />
+        </div>
         <h1 className="mt-3 text-3xl font-black text-slate-950">Prepara tu primer día en China</h1>
         <p className="mt-4 text-base leading-7 text-slate-600">
           La primera versión está disponible en español. La versión en inglés se añadirá después.

@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   },
   description:
     "Herramientas prácticas para preparar tu viaje a China: internet, pagos, hotel, transporte y primer día.",
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-touch-icon.png"
+  },
   alternates: {
     canonical: "/",
     languages: {
@@ -28,8 +32,22 @@ export const metadata: Metadata = {
       "Crea un plan de respaldo para tu primer día en China antes de aterrizar.",
     url: siteUrl,
     siteName: "China Trip Tools",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "China Trip Tools"
+      }
+    ],
     locale: "es_ES",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "China Trip Tools",
+    description: "Crea un plan de respaldo para tu primer día en China antes de aterrizar.",
+    images: ["/og-image.png"]
   }
 };
 
