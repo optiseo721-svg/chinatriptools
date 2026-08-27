@@ -3,9 +3,7 @@ import { Check, ChevronDown, Languages, Menu } from "lucide-react";
 
 const guideLinks = [
   { href: "/es/lista-para-viajar-a-china/", label: "Lista para viajar a China" },
-  { href: "/es/internet-esim-china/", label: "Internet y eSIM" },
-  { href: "/es/viajar-a-china-desde-espana/", label: "Viajar desde España" },
-  { href: "/es/viajar-a-china-desde-mexico/", label: "Viajar desde México" }
+  { href: "/es/internet-esim-china/", label: "Internet y eSIM" }
 ];
 
 const summaryClass =

@@ -153,6 +153,7 @@ function evaluateStatus(answers: Answers): ReadinessStatus {
   const needsAction =
     answers.mobileDataStatus === "planned" ||
     answers.mobileDataStatus === "installed" ||
+    answers.paymentStatus === "not_started" ||
     answers.paymentStatus === "app_installed" ||
     answers.paymentStatus === "card_linked" ||
     answers.hotelArrivalStatus === "address_saved" ||
