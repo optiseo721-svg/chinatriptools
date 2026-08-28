@@ -1,4 +1,6 @@
 import { CheckCircle2, ExternalLink } from "lucide-react";
+import { TrackedDetails } from "@/components/TrackedDetails";
+import { TrackedExternalLink } from "@/components/TrackedExternalLink";
 import { TrackedLink } from "@/components/TrackedLink";
 
 export type FAQItem = {
@@ -76,10 +78,9 @@ export function FAQSection({ items }: { items: FAQItem[] }) {
       <h2 className="text-2xl font-black text-slate-950">Preguntas frecuentes</h2>
       <div className="mt-4 grid gap-3">
         {items.map((item) => (
-          <details key={item.question} className="card p-4">
-            <summary className="cursor-pointer text-base font-black text-slate-950">{item.question}</summary>
+          <TrackedDetails key={item.question} className="card p-4" summary={item.question} eventLabel={item.question}>
             <p className="mt-3 leading-7 text-slate-600">{item.answer}</p>
-          </details>
+          </TrackedDetails>
         ))}
       </div>
     </section>
@@ -112,16 +113,15 @@ export function OfficialSourceList() {
   return (
     <div className="grid gap-3 md:grid-cols-3">
       {links.map(([label, href]) => (
-        <a
+        <TrackedExternalLink
           key={href}
           href={href}
-          target="_blank"
-          rel="noopener noreferrer"
           className="flex items-center justify-between gap-3 rounded-lg border border-slate-200 bg-white p-4 font-bold text-slate-800 hover:border-blue-300"
+          eventLabel={`article_source:${label}`}
         >
           {label}
           <ExternalLink size={16} aria-hidden="true" />
-        </a>
+        </TrackedExternalLink>
       ))}
     </div>
   );

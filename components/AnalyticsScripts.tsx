@@ -1,6 +1,8 @@
 "use client";
 
+import { useEffect } from "react";
 import Script from "next/script";
+import { trackEvent } from "@/lib/analytics";
 import { useCookieChoice } from "@/lib/cookieChoice";
 
 type AnalyticsScriptsProps = {
@@ -10,6 +12,24 @@ type AnalyticsScriptsProps = {
 
 export function AnalyticsScripts({ gaId, clarityId }: AnalyticsScriptsProps) {
   const choice = useCookieChoice();
+
+  useEffect(() => {
+    if (choice !== "accepted") {
+      return;
+    }
+
+    const pendingEvent = window.sessionStorage.getItem("ctt_pending_analytics_event");
+    if (!pendingEvent) {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      trackEvent(pendingEvent, { source: "cookie_banner" });
+      window.sessionStorage.removeItem("ctt_pending_analytics_event");
+    }, 1200);
+
+    return () => window.clearTimeout(timeout);
+  }, [choice, clarityId, gaId]);
 
   if (choice !== "accepted") {
     return null;

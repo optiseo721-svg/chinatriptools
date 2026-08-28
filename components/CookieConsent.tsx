@@ -37,7 +37,14 @@ export function CookieConsent() {
           ) : null}
         </div>
         <div className="flex flex-col gap-2 sm:flex-row md:justify-end">
-          <button className="button-primary" type="button" onClick={() => saveCookieChoice("accepted")}>
+          <button
+            className="button-primary"
+            type="button"
+            onClick={() => {
+              window.sessionStorage.setItem("ctt_pending_analytics_event", "cookie_analytics_accept");
+              saveCookieChoice("accepted");
+            }}
+          >
             Aceptar analíticas
           </button>
           <button className="button-secondary" type="button" onClick={() => saveCookieChoice("rejected")}>

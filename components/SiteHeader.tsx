@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { Check, ChevronDown, Languages, Menu } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
+import { TrackedLink } from "./TrackedLink";
 
 const guideLinks = [
   { href: "/es/lista-para-viajar-a-china/", label: "Lista para viajar a China" },
@@ -25,9 +25,15 @@ function GuideMenu({ mobile = false }: { mobile?: boolean }) {
         }
       >
         {guideLinks.map((link) => (
-          <Link key={link.href} className="rounded-md px-3 py-2.5 font-semibold text-slate-700 hover:bg-slate-100" href={link.href}>
+          <TrackedLink
+            key={link.href}
+            className="rounded-md px-3 py-2.5 font-semibold text-slate-700 hover:bg-slate-100"
+            href={link.href}
+            eventName="nav_click"
+            eventLabel={`guide:${link.label}`}
+          >
             {link.label}
-          </Link>
+          </TrackedLink>
         ))}
       </div>
     </details>
@@ -49,10 +55,15 @@ function LanguageMenu({ mobile = false }: { mobile?: boolean }) {
             : "absolute right-0 top-[calc(100%+8px)] z-30 w-48 rounded-lg border border-slate-200 bg-white p-2 shadow-lg"
         }
       >
-        <Link className="flex items-center justify-between rounded-md px-3 py-2.5 font-semibold text-slate-900 hover:bg-slate-100" href="/es/" lang="es">
+        <TrackedLink
+          className="flex items-center justify-between rounded-md px-3 py-2.5 font-semibold text-slate-900 hover:bg-slate-100"
+          href="/es/"
+          eventName="language_click"
+          eventLabel="es"
+        >
           Español
           <Check aria-hidden="true" className="size-4 text-blue-600" strokeWidth={3} />
-        </Link>
+        </TrackedLink>
       </div>
     </details>
   );
@@ -64,9 +75,14 @@ export function SiteHeader() {
       <div className="content-wrap flex min-h-16 items-center justify-between gap-4 py-3">
         <BrandLogo href="/es/" />
         <nav aria-label="Navegación principal" className="hidden items-center gap-2 text-sm md:flex">
-          <Link className="rounded-md px-3 py-2 font-bold text-slate-700 hover:bg-slate-100" href="/es/checker/">
+          <TrackedLink
+            className="rounded-md px-3 py-2 font-bold text-slate-700 hover:bg-slate-100"
+            href="/es/checker/"
+            eventName="nav_click"
+            eventLabel="prepare_trip"
+          >
             Preparar mi viaje
-          </Link>
+          </TrackedLink>
           <GuideMenu />
           <span aria-hidden="true" className="mx-1 h-6 w-px bg-slate-200" />
           <LanguageMenu />
@@ -82,9 +98,14 @@ export function SiteHeader() {
             aria-label="Navegación móvil"
             className="absolute right-0 top-[calc(100%+8px)] z-30 grid w-[min(19rem,calc(100vw-32px))] gap-1 rounded-lg border border-slate-200 bg-white p-3 text-sm shadow-lg"
           >
-            <Link className="min-h-11 rounded-md px-3 py-3 font-bold text-slate-800 hover:bg-slate-100" href="/es/checker/">
+            <TrackedLink
+              className="min-h-11 rounded-md px-3 py-3 font-bold text-slate-800 hover:bg-slate-100"
+              href="/es/checker/"
+              eventName="nav_click"
+              eventLabel="mobile_prepare_trip"
+            >
               Preparar mi viaje
-            </Link>
+            </TrackedLink>
             <GuideMenu mobile />
             <div className="my-1 h-px bg-slate-200" />
             <LanguageMenu mobile />

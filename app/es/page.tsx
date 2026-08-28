@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ClipboardCheck, Plane, ShieldCheck, Smartphone } from "lucide-react";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
   title: {
@@ -33,13 +33,23 @@ export default function SpanishHomePage() {
                 pagos, hotel, transporte y enlaces oficiales.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-                <Link className="button-primary" href="/es/checker/">
+                <TrackedLink
+                  className="button-primary"
+                  href="/es/checker/"
+                  eventName="home_cta_click"
+                  eventLabel="home_primary_create_plan"
+                >
                   <ClipboardCheck aria-hidden="true" size={18} />
                   Crear mi plan
-                </Link>
-                <Link className="button-secondary" href="/es/lista-para-viajar-a-china/">
+                </TrackedLink>
+                <TrackedLink
+                  className="button-secondary"
+                  href="/es/lista-para-viajar-a-china/"
+                  eventName="home_cta_click"
+                  eventLabel="home_secondary_checklist"
+                >
                   Ver lista de preparación
-                </Link>
+                </TrackedLink>
               </div>
               <p className="mt-5 text-sm font-semibold text-slate-500">
                 Esta herramienta es solo para preparar tu viaje. No ofrece asesoría legal.
