@@ -39,7 +39,6 @@ export function AnalyticsScripts({ gaId, clarityId }: AnalyticsScriptsProps) {
     <>
       {gaId ? (
         <>
-          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
           <Script id="ga4" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
@@ -48,6 +47,7 @@ export function AnalyticsScripts({ gaId, clarityId }: AnalyticsScriptsProps) {
               gtag('config', '${gaId}');
             `}
           </Script>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />
         </>
       ) : null}
       {clarityId ? (

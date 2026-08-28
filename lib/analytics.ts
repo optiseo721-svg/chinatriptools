@@ -2,6 +2,7 @@ type EventParams = Record<string, string | number | boolean | undefined>;
 
 declare global {
   interface Window {
+    dataLayer?: unknown[];
     gtag?: (command: "event", eventName: string, params?: EventParams) => void;
     clarity?: (...args: [string, ...Array<string | string[]>]) => void;
   }
@@ -20,7 +21,12 @@ export function trackEvent(eventName: string, params: EventParams = {}) {
     return;
   }
 
-  window.gtag?.("event", eventName, params);
+  if (window.gtag) {
+    window.gtag("event", eventName, params);
+  } else {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(["event", eventName, params]);
+  }
 
   if (window.clarity) {
     window.clarity("event", eventName);
