@@ -35,3 +35,8 @@ export function saveCookieChoice(choice: Exclude<CookieChoice, "unset">) {
   window.localStorage.setItem(COOKIE_CHOICE_KEY, choice);
   window.dispatchEvent(new Event(COOKIE_CHOICE_EVENT));
 }
+
+export function resetCookieChoice() {
+  window.localStorage.removeItem(COOKIE_CHOICE_KEY);
+  window.dispatchEvent(new Event(COOKIE_CHOICE_EVENT));
+}

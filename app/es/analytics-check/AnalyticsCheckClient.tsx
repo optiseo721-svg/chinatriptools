@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { Activity, CheckCircle2, RefreshCw, Send, XCircle } from "lucide-react";
+import { Activity, CheckCircle2, RefreshCw, RotateCcw, Send, XCircle } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
-import { saveCookieChoice, useCookieChoice } from "@/lib/cookieChoice";
+import { resetCookieChoice, saveCookieChoice, useCookieChoice } from "@/lib/cookieChoice";
 
 type RuntimeStatus = {
   clarityType: string;
@@ -41,6 +41,20 @@ function StatusRow({ label, ok, detail }: { label: string; ok: boolean; detail: 
       )}
     </div>
   );
+}
+
+function clarityDetail(status: RuntimeStatus) {
+  if (status.clarityType === "function") {
+    return `window.clarity = function; script detectado: ${status.hasClarityScript ? "sí" : "no"}`;
+  }
+
+  if (status.clarityType === "object") {
+    return `window.clarity = object; script detectado: ${
+      status.hasClarityScript ? "sí" : "no"
+    }. La cola existe, pero el script externo puede estar bloqueado por red, SSL, proxy o extensión.`;
+  }
+
+  return `window.clarity = ${status.clarityType}; script detectado: ${status.hasClarityScript ? "sí" : "no"}`;
 }
 
 export function AnalyticsCheckClient() {
@@ -102,6 +116,19 @@ export function AnalyticsCheckClient() {
               Aceptar analíticas
             </button>
           )}
+          {cookieChoice === "accepted" ? (
+            <button
+              className="button-secondary"
+              type="button"
+              onClick={() => {
+                resetCookieChoice();
+                window.location.reload();
+              }}
+            >
+              <RotateCcw size={18} aria-hidden="true" />
+              Reiniciar consentimiento
+            </button>
+          ) : null}
           <button className="button-secondary" type="button" onClick={refreshStatus}>
             <RefreshCw size={18} aria-hidden="true" />
             Actualizar estado
@@ -129,6 +156,11 @@ export function AnalyticsCheckClient() {
             Evento de prueba enviado. Revisa GA4 Realtime y Clarity después de unos minutos.
           </p>
         ) : null}
+        {cookieChoice === "accepted" ? (
+          <p className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-3 text-sm font-bold text-blue-950">
+            El botón Aceptar analíticas está oculto porque el consentimiento ya está aceptado en este navegador.
+          </p>
+        ) : null}
       </div>
 
       <div className="card p-5">
@@ -143,9 +175,7 @@ export function AnalyticsCheckClient() {
             <StatusRow
               label="Clarity"
               ok={status.clarityType === "function"}
-              detail={`window.clarity = ${status.clarityType}; script detectado: ${
-                status.hasClarityScript ? "sí" : "no"
-              }`}
+              detail={clarityDetail(status)}
             />
             <StatusRow
               label="GA4"
