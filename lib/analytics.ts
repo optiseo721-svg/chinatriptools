@@ -21,14 +21,14 @@ export function trackEvent(eventName: string, params: EventParams = {}) {
     return;
   }
 
-  if (window.gtag) {
+  if (typeof window.gtag === "function") {
     window.gtag("event", eventName, params);
   } else {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push(["event", eventName, params]);
   }
 
-  if (window.clarity) {
+  if (typeof window.clarity === "function") {
     window.clarity("event", eventName);
     Object.entries(params).forEach(([key, value]) => {
       const normalized = toAnalyticsValue(value);
