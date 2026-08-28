@@ -404,14 +404,43 @@ export function CheckerClient() {
   }
 
   function generateCard() {
+    trackEvent("checker_generate_click", {
+      completed_count: completedCount,
+      can_generate: canGenerate,
+      status
+    });
+
     if (!canGenerate) {
+      trackEvent("checker_generate_blocked", {
+        completed_count: completedCount,
+        status
+      });
       return;
     }
+
     setGenerated(true);
     setCopied(false);
     trackEvent("checker_result_view", {
       city: answers.arrivalCity,
       arrival_time: answers.arrivalTime,
+      completed_count: completedCount,
+      status
+    });
+    window.setTimeout(() => {
+      trackEvent("checker_result_visible", {
+        completed_count: completedCount,
+        status
+      });
+    }, 800);
+    window.setTimeout(() => {
+      trackEvent("checker_result_visible_retry", {
+        completed_count: completedCount,
+        status
+      });
+    }, 2000);
+    trackEvent("generate_lead", {
+      event_category: "checker",
+      event_label: "result_view",
       status
     });
     requestAnimationFrame(() => {
@@ -420,12 +449,15 @@ export function CheckerClient() {
   }
 
   async function copyBackupCard() {
+    trackEvent("backup_card_copy_click", { status });
     try {
       await navigator.clipboard.writeText(backupCard);
       setCopied(true);
       trackEvent("backup_card_copy", { status });
+      trackEvent("backup_card_copy_success", { status });
     } catch {
       setCopied(false);
+      trackEvent("backup_card_copy_failed", { status });
     }
   }
 
