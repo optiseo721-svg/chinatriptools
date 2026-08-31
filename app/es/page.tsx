@@ -25,12 +25,12 @@ export default function SpanishHomePage() {
           <div className="content-wrap grid gap-8 py-12 md:grid-cols-[1.05fr_0.95fr] md:items-center md:py-16">
             <div>
               <p className="eyebrow">China Trip Tools / ES</p>
-              <h1 className="mt-3 max-w-full break-words text-3xl font-black leading-tight text-slate-950 sm:text-4xl md:text-5xl">
-                Prepara tu primer día en China.
+              <h1 className="mt-3 max-w-full break-words text-3xl font-black leading-tight text-slate-950 sm:text-4xl md:text-[44px]">
+                Llega a China sin bloqueos.
               </h1>
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
                 Responde unas preguntas rápidas y recibe en <span className="whitespace-nowrap">5 minutos</span> una
-                tarjeta para guardar antes de aterrizar: datos móviles, pagos, hotel, transporte y enlaces oficiales.
+                tarjeta para tu primer día: datos móviles, pagos, hotel, transporte y enlaces oficiales.
               </p>
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <TrackedLink
