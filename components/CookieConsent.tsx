@@ -18,7 +18,9 @@ export function CookieConsent() {
       <div className="mx-auto grid w-full max-w-5xl gap-4 md:grid-cols-[1fr_auto] md:items-end">
         <div>
           <p className="text-xs font-black uppercase text-brand-blue">Opciones de privacidad</p>
-          <h2 className="mt-1 text-2xl font-black text-slate-950">Usamos cookies y almacenamiento local</h2>
+          <h2 className="mt-1 break-words text-xl font-black leading-tight text-slate-950 sm:text-2xl">
+            Usamos cookies y almacenamiento local
+          </h2>
           <p className="mt-2 max-w-3xl leading-7 text-slate-600">
             China Trip Tools usa funciones necesarias para que el sitio funcione. Con tu permiso, las herramientas de
             analítica nos ayudan a entender qué páginas y botones se usan para mejorar el MVP.
