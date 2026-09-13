@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CheckCircle2, ExternalLink } from "lucide-react";
 import { TrackedDetails } from "@/components/TrackedDetails";
 import { TrackedExternalLink } from "@/components/TrackedExternalLink";
@@ -13,19 +14,31 @@ export function ArticleHero({
   title,
   description,
   ctaLabel,
-  ctaEventLabel
+  ctaEventLabel,
+  reviewedAt = "2026-08-26",
+  reviewedLabel = "Revisado el 26 de agosto de 2026",
+  image
 }: {
   eyebrow: string;
   title: string;
   description: string;
   ctaLabel: string;
   ctaEventLabel: string;
+  reviewedAt?: string;
+  reviewedLabel?: string;
+  image?: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+    caption?: string;
+  };
 }) {
   return (
     <section className="bg-white">
       <div className="content-wrap py-10 md:py-14">
         <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-3 max-w-4xl text-4xl font-black leading-tight text-slate-950 md:text-5xl">{title}</h1>
+        <h1 className="mt-3 max-w-4xl break-words text-3xl font-black leading-tight text-slate-950 sm:text-4xl md:text-5xl">{title}</h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">{description}</p>
         <div className="mt-7">
           <TrackedLink className="button-primary" href="/es/checker/" eventLabel={ctaEventLabel}>
@@ -34,11 +47,25 @@ export function ArticleHero({
         </div>
         <div className="mt-5 flex flex-col gap-1 text-sm font-semibold text-slate-500 sm:flex-row sm:gap-3">
           <span>Por el equipo editorial de China Trip Tools</span>
-          <time dateTime="2026-08-26">Revisado el 26 de agosto de 2026</time>
+          <time dateTime={reviewedAt}>{reviewedLabel}</time>
         </div>
         <p className="mt-3 text-sm font-semibold text-slate-500">
           Esta herramienta es solo para preparar tu viaje. No ofrece asesoría legal.
         </p>
+        {image ? (
+          <figure className="mt-8 overflow-hidden rounded-lg border border-slate-200 bg-slate-50">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              className="h-auto w-full"
+              priority
+              sizes="(max-width: 1152px) calc(100vw - 32px), 1120px"
+            />
+            {image.caption ? <figcaption className="px-4 py-3 text-sm leading-6 text-slate-500">{image.caption}</figcaption> : null}
+          </figure>
+        ) : null}
       </div>
     </section>
   );

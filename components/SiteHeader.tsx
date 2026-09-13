@@ -4,7 +4,8 @@ import { TrackedLink } from "./TrackedLink";
 
 const guideLinks = [
   { href: "/es/lista-para-viajar-a-china/", label: "Lista para viajar a China" },
-  { href: "/es/internet-esim-china/", label: "Internet y eSIM" }
+  { href: "/es/internet-esim-china/", label: "Internet y eSIM" },
+  { href: "/es/viajar-a-china-desde-argentina/", label: "Viajar desde Argentina" }
 ];
 
 const summaryClass =
