@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleHero, Checklist, ContentSection, FAQSection, InlineToolCta, OfficialSourceList } from "@/components/ArticleBlocks";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedLink } from "@/components/TrackedLink";
 
 const faqs = [
   {
@@ -61,6 +62,17 @@ export default function SpainPage() {
             <p>
               Verifica entrada, visa/visado y tránsito con fuentes oficiales. Este sitio no decide si puedes entrar en China;
               solo organiza una preparación práctica para el primer día.
+            </p>
+            <p className="mt-4">
+              Revisa nuestra{` `}
+              <TrackedLink
+                href="/es/visa-para-china/"
+                eventLabel="spain_internal:visa_guide"
+                className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2"
+              >
+                guía general sobre visado, exenciones y tránsito para China
+              </TrackedLink>
+              {` `}y vuelve a comprobar la vigencia oficial antes de viajar.
             </p>
           </ContentSection>
           <ContentSection title="Preparación para el primer día">

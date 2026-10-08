@@ -3,6 +3,7 @@ import { BrandLogo } from "./BrandLogo";
 import { TrackedLink } from "./TrackedLink";
 
 const guideLinks = [
+  { href: "/es/visa-para-china/", label: "Visa para China" },
   { href: "/es/lista-para-viajar-a-china/", label: "Lista para viajar a China" },
   { href: "/es/internet-esim-china/", label: "Internet y eSIM" },
   { href: "/es/viajar-a-china-desde-argentina/", label: "Viajar desde Argentina" }

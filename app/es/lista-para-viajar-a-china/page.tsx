@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleHero, Checklist, ContentSection, FAQSection, InlineToolCta } from "@/components/ArticleBlocks";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedLink } from "@/components/TrackedLink";
 
 const faqs = [
   {
@@ -78,6 +79,17 @@ export default function TravelChecklistPage() {
             <p>
               Verifica la información oficial de entrada o tránsito antes de pagar vuelos y hoteles. Este sitio solo organiza
               una lista de preparación y no decide si puedes entrar, transitar o viajar sin visado.
+            </p>
+            <p className="mt-4">
+              Empieza por nuestra{` `}
+              <TrackedLink
+                href="/es/visa-para-china/"
+                eventLabel="travel_checklist_internal:visa_guide"
+                className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2"
+              >
+                guía sobre visa, exenciones y tránsito para China
+              </TrackedLink>
+              {` `}y confirma después tu caso en la fuente oficial correspondiente.
             </p>
           </ContentSection>
           <ContentSection title="Antes de volar">

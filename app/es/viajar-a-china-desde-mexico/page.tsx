@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ArticleHero, Checklist, ContentSection, FAQSection, InlineToolCta, OfficialSourceList } from "@/components/ArticleBlocks";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedLink } from "@/components/TrackedLink";
 
 const faqs = [
   {
@@ -61,6 +62,17 @@ export default function MexicoPage() {
             <p>
               La búsqueda sobre visa China mexicanos tiene intención clara, pero este sitio no sustituye a la fuente oficial.
               Antes de reservar, confirma requisitos de entrada, tránsito, documentos y fechas con autoridades oficiales.
+            </p>
+            <p className="mt-4">
+              Consulta también la{` `}
+              <TrackedLink
+                href="/es/visa-para-china/"
+                eventLabel="mexico_internal:visa_guide"
+                className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2"
+              >
+                guía general sobre visa y tránsito para China
+              </TrackedLink>
+              {` `}para distinguir un viaje directo de una escala hacia un tercer país o región.
             </p>
           </ContentSection>
           <ContentSection title="Preparación para viajeros de México">

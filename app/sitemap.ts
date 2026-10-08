@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const siteUrl = "https://chinatriptools.com";
-const lastModified = new Date("2026-09-13");
+const lastModified = new Date("2026-10-08");
 
 export const dynamic = "force-static";
 
@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/es/checker/",
     "/es/lista-para-viajar-a-china/",
     "/es/internet-esim-china/",
+    "/es/visa-para-china/",
     "/es/viajar-a-china-desde-argentina/",
     "/es/viajar-a-china-desde-espana/",
     "/es/viajar-a-china-desde-mexico/",

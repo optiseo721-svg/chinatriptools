@@ -281,6 +281,17 @@ export default function ArgentinaTravelPage() {
                 Las políticas migratorias pueden cambiar. Vuelve a consultar la web de la Embajada de China en Argentina antes de reservar y otra vez pocos días antes de volar.
               </p>
             </aside>
+            <p className="mt-5">
+              Para comparar esta exención con el tránsito de 240 horas y con los casos que sí requieren visa, consulta la{` `}
+              <TrackedLink
+                href="/es/visa-para-china/"
+                eventLabel="argentina_internal:visa_guide"
+                className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2"
+              >
+                guía general sobre visa para China
+              </TrackedLink>
+              .
+            </p>
             <ArticleFigure
               src="/images/articles/viajar-a-china-desde-argentina/embassy-visa-free-extension-notice.webp"
               alt="Aviso de la Embajada de China en Argentina sobre la prórroga de la exención de visado hasta el 31 de diciembre de 2026"
