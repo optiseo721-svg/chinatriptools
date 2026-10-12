@@ -100,6 +100,51 @@ export default function SpanishHomePage() {
             ))}
           </div>
         </section>
+
+        <section className="border-y border-slate-200 bg-slate-50">
+          <div className="content-wrap py-10">
+            <p className="eyebrow">Entrada y preparación</p>
+            <h2 className="mt-3 text-2xl font-black text-slate-950">Comprueba la visa antes de organizar el primer día</h2>
+            <p className="mt-3 max-w-3xl leading-7 text-slate-600">
+              La nacionalidad del pasaporte, el motivo del viaje y la ruta determinan qué requisitos debes confirmar.
+              Empieza por la guía general y continúa con la información práctica de tu país de salida.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <TrackedLink
+                className="button-secondary"
+                href="/es/visa-para-china/"
+                eventName="home_internal_link"
+                eventLabel="home_visa_guide"
+              >
+                Visa para China
+              </TrackedLink>
+              <TrackedLink
+                className="button-secondary"
+                href="/es/viajar-a-china-desde-mexico/"
+                eventName="home_internal_link"
+                eventLabel="home_mexico_guide"
+              >
+                Desde México
+              </TrackedLink>
+              <TrackedLink
+                className="button-secondary"
+                href="/es/viajar-a-china-desde-argentina/"
+                eventName="home_internal_link"
+                eventLabel="home_argentina_guide"
+              >
+                Desde Argentina
+              </TrackedLink>
+              <TrackedLink
+                className="button-secondary"
+                href="/es/viajar-a-china-desde-espana/"
+                eventName="home_internal_link"
+                eventLabel="home_spain_guide"
+              >
+                Desde España
+              </TrackedLink>
+            </div>
+          </div>
+        </section>
       </main>
       <SiteFooter />
     </div>
