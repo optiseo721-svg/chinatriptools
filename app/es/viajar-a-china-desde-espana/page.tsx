@@ -1,101 +1,64 @@
 import type { Metadata } from "next";
-import { ArticleHero, Checklist, ContentSection, FAQSection, InlineToolCta, OfficialSourceList } from "@/components/ArticleBlocks";
+import { ArrowRight, ExternalLink, Info, ShieldCheck } from "lucide-react";
+import { ArticleHero, Checklist, ContentSection, FAQSection, InlineToolCta } from "@/components/ArticleBlocks";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { TrackedExternalLink } from "@/components/TrackedExternalLink";
 import { TrackedLink } from "@/components/TrackedLink";
 
+const siteUrl = "https://chinatriptools.com";
+const pagePath = "/es/viajar-a-china-desde-espana/";
+const reviewedAt = "2026-10-15";
+
+const officialSources = [
+  { label: "Embajada de China en España: prórroga de la exención de visado", href: "https://es.china-embassy.gov.cn/esp/lqyw/202511/t20251105_11747149.htm", note: "Motivos admitidos, pasaporte ordinario y vigencia anunciada hasta el 31 de diciembre de 2026." },
+  { label: "Embajada de China en España: instrucciones para solicitar visado", href: "https://es.china-embassy.gov.cn/esp/lqyw/asuntosconsulares1/202312/t20231227_11213803.htm", note: "Solicitud en línea, revisión previa y presentación de documentos en Madrid." },
+  { label: "Centro de Visados de China en Madrid", href: "https://www.visaforchina.cn/MAD4_ES/tongzhigonggao/552383899767017514.html", note: "Información del proceso local de solicitud, entrega y recogida del pasaporte." },
+  { label: "Embajada de China en España: exención temporal de huellas", href: "https://es.china-embassy.gov.cn/esp/lqyw/asuntosconsulares1/202512/t20251219_11776823.htm", note: "Aviso para visados de corto plazo con estancia inferior a 180 días hasta el 31 de diciembre de 2026." }
+];
+
 const faqs = [
-  {
-    question: "¿Qué necesito para viajar a China desde España?",
-    answer:
-      "Necesitas verificar requisitos oficiales de entrada, visado o tránsito, y preparar internet, pagos, hotel y transporte para el primer día."
-  },
-  {
-    question: "¿Hace falta visado para China desde España?",
-    answer:
-      "Las reglas pueden cambiar. Verifica siempre con fuentes oficiales chinas o la embajada antes de reservar o viajar."
-  },
-  {
-    question: "¿Cómo preparo internet y pagos en China?",
-    answer:
-      "Configura datos móviles o eSIM antes de volar y prueba tu método de pago si planeas usar apps móviles."
-  }
+  { question: "¿Los españoles necesitan visado para China?", answer: "Para negocios, turismo, visitas a familiares o amigos, intercambios o tránsito de hasta 30 días, los titulares de pasaporte ordinario español pueden entrar sin visado hasta el 31 de diciembre de 2026, según el aviso publicado por la Embajada de China en España. Para trabajo, estudios, actividades periodísticas, una estancia prevista de más de 30 días o un documento distinto del pasaporte ordinario, revisa la visa correspondiente antes de viajar." },
+  { question: "¿Necesito solicitar algo antes de viajar sin visado?", answer: "La exención no exige una solicitud previa de visado si cumples todas las condiciones, pero la admisión final corresponde a las autoridades fronterizas. Lleva documentos coherentes con el motivo del viaje, como vuelos, reservas de alojamiento o una carta de invitación cuando proceda." },
+  { question: "¿Qué documentación necesito para viajar a China desde España?", answer: "Prepara un pasaporte ordinario válido durante el viaje, itinerario completo, reservas de alojamiento y pruebas del motivo de entrada cuando correspondan. Además, guarda offline la dirección del hotel en chino, la conexión móvil y un método de pago alternativo." },
+  { question: "¿Cuándo necesito tramitar un visado chino desde España?", answer: "Debes revisar el visado adecuado si tu actividad o tu estancia no entran en la exención: por ejemplo, trabajo, estudios, periodismo, residencia o más de 30 días previstos. La Embajada indica que el proceso comienza en línea y que los requisitos dependen de la categoría." },
+  { question: "¿Hay que dar huellas para solicitar un visado chino en España?", answer: "La Embajada comunica una exención de toma de huellas para solicitudes de visado de corto plazo con estancia inferior a 180 días hasta el 31 de diciembre de 2026. Las categorías que requieren permiso de residencia después de entrar, como D, J1, Q1, S1, X1 y Z, siguen sujetas a las normas aplicables." },
+  { question: "¿Cómo preparo internet y pagos para llegar a China?", answer: "Configura eSIM o roaming antes de volar, descarga la dirección del hotel y la primera ruta, y lleva un método de pago principal junto a una tarjeta física o efectivo como respaldo. No dejes estas configuraciones para después de aterrizar." }
 ];
 
 export const metadata: Metadata = {
-  title: "Viajar a China desde España: preparación y primer día",
-  description:
-    "Revisa qué preparar antes de viajar a China desde España: entrada, visado, internet, pagos, hotel y plan de respaldo para el primer día.",
+  title: "Viajar a China desde España: visado y requisitos 2026",
+  description: "¿Los españoles necesitan visado para China? Requisitos de entrada, exención de 30 días, trámite de visado, internet y preparación desde España.",
   authors: [{ name: "Equipo editorial de China Trip Tools" }],
-  alternates: {
-    canonical: "/es/viajar-a-china-desde-espana/"
-  }
+  keywords: ["viajar a China desde España", "visado China España", "los españoles necesitan visado para China", "requisitos para viajar a China desde España", "visa China España"],
+  alternates: { canonical: pagePath },
+  openGraph: { type: "article", url: pagePath, title: "Viajar a China desde España: visado y requisitos 2026", description: "Comprueba la exención de visado, sus límites y qué preparar antes de viajar desde España a China." },
+  twitter: { card: "summary", title: "Viajar a China desde España: visado y requisitos", description: "Exención de 30 días, casos que requieren visado y preparación del primer día." }
 };
 
+function SourceLinks() {
+  return <div className="grid gap-3">{officialSources.map((source) => <TrackedExternalLink key={source.href} href={source.href} eventLabel={`spain_source:${source.label}`} className="group flex items-start justify-between gap-4 rounded-lg border border-slate-200 bg-white p-4 hover:border-blue-300"><span><span className="block font-black text-slate-900 group-hover:text-blue-700">{source.label}</span><span className="mt-1 block text-sm leading-6 text-slate-600">{source.note}</span></span><ExternalLink className="mt-1 shrink-0 text-blue-600" size={17} aria-hidden="true" /></TrackedExternalLink>)}</div>;
+}
+
 export default function SpainPage() {
-  const faqSchema = {
+  const structuredData = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer
-      }
-    }))
+    "@graph": [
+      { "@type": "Article", "@id": `${siteUrl}${pagePath}#article`, headline: "Viajar a China desde España: visado y requisitos 2026", description: "Guía para confirmar la exención de visado y preparar un viaje desde España a China.", datePublished: reviewedAt, dateModified: reviewedAt, inLanguage: "es", isAccessibleForFree: true, mainEntityOfPage: `${siteUrl}${pagePath}`, author: { "@type": "Organization", name: "Equipo editorial de China Trip Tools", url: `${siteUrl}/es/about/` }, publisher: { "@type": "Organization", name: "China Trip Tools", url: siteUrl }, citation: officialSources.map((source) => source.href) },
+      { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "China Trip Tools", item: `${siteUrl}/es/` }, { "@type": "ListItem", position: 2, name: "Guías", item: `${siteUrl}/es/lista-para-viajar-a-china/` }, { "@type": "ListItem", position: 3, name: "Viajar a China desde España", item: `${siteUrl}${pagePath}` }] },
+      { "@type": "FAQPage", mainEntity: faqs.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })) }
+    ]
   };
 
-  return (
-    <div className="page-shell">
-      <SiteHeader />
-      <main>
-        <ArticleHero
-          eyebrow="España"
-          title="Viajar a China desde España"
-          description="Una guía práctica para revisar entrada, visado o visado de tránsito, internet, pagos y llegada al hotel."
-          ctaLabel="Crea tu plan de respaldo"
-          ctaEventLabel="spain_hero"
-        />
-        <article className="content-wrap py-8">
-          <ContentSection title="Verificación oficial de entrada">
-            <p>
-              Verifica entrada, visa/visado y tránsito con fuentes oficiales. Este sitio no decide si puedes entrar en China;
-              solo organiza una preparación práctica para el primer día.
-            </p>
-            <p className="mt-4">
-              Revisa nuestra{` `}
-              <TrackedLink
-                href="/es/visa-para-china/"
-                eventLabel="spain_internal:visa_guide"
-                className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2"
-              >
-                guía general sobre visado, exenciones y tránsito para China
-              </TrackedLink>
-              {` `}y vuelve a comprobar la vigencia oficial antes de viajar.
-            </p>
-          </ContentSection>
-          <ContentSection title="Preparación para el primer día">
-            <Checklist
-              items={[
-                "Guardar dirección del hotel en chino.",
-                "Preparar datos móviles o eSIM antes de aterrizar.",
-                "Probar pago móvil si vas a depender de él.",
-                "Confirmar aeropuerto y primera ruta.",
-                "Tener una frase de ayuda en chino.",
-                "Guardar enlaces oficiales para revisar cambios."
-              ]}
-            />
-          </ContentSection>
-          <InlineToolCta label="spain_inline" />
-          <ContentSection title="Enlaces oficiales">
-            <OfficialSourceList />
-          </ContentSection>
-          <FAQSection items={faqs} />
-        </article>
-      </main>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <SiteFooter />
-    </div>
-  );
+  return <div className="page-shell"><SiteHeader /><main><ArticleHero eyebrow="Guía para viajeros de España" title="Viajar a China desde España: ¿necesitas visado?" description="Para pasaporte español, comprueba primero si tu viaje entra en la exención vigente; después prepara documentos, conexión, pagos y la llegada del primer día." ctaLabel="Crear mi tarjeta de respaldo" ctaEventLabel="spain_hero" reviewedAt={reviewedAt} reviewedLabel="Revisado el 15 de octubre de 2026" />
+    <article className="content-wrap max-w-4xl py-8">
+      <section aria-labelledby="respuesta-rapida" className="rounded-lg border border-blue-200 bg-blue-50 p-5 sm:p-6"><div className="flex gap-3"><Info className="mt-1 shrink-0 text-blue-700" size={22} aria-hidden="true" /><div><h2 id="respuesta-rapida" className="text-xl font-black text-blue-950">¿Los españoles necesitan visado para China?</h2><p className="mt-2 leading-7 text-blue-950">Para negocios, turismo, visitas, intercambios o tránsito de hasta 30 días, los titulares de pasaporte ordinario español pueden entrar sin visado hasta el 31 de diciembre de 2026. Si vas a trabajar, estudiar, informar como periodista, quedarte más de 30 días o usar un documento distinto del pasaporte ordinario, revisa la visa que corresponda antes de viajar.</p></div></div></section>
+      <ContentSection title="Exención de visado para viajar desde España"><p>La exención se aplica al pasaporte ordinario español y a los motivos concretos publicados por la Embajada: negocios, turismo, visita a familiares o amigos, intercambios y tránsito. La estancia no puede superar los 30 días. No equivale a un permiso general para cualquier actividad ni reemplaza una visa cuando el viaje queda fuera de esas condiciones.</p><p className="mt-4">La entrada definitiva se decide en frontera. Lleva pruebas coherentes con el motivo del viaje, como vuelos, reservas de alojamiento o carta de invitación cuando corresponda. Antes de volar, vuelve a abrir el <TrackedExternalLink href={officialSources[0].href} eventLabel="spain_inline:visa_waiver_notice" className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2">aviso de la Embajada de China en España</TrackedExternalLink> para confirmar la vigencia.</p></ContentSection>
+      <ContentSection title="Cuándo debes tramitar visado"><div className="mt-5 overflow-x-auto rounded-lg border border-slate-200 bg-white"><table className="w-full min-w-[680px] border-collapse text-left text-sm"><caption className="sr-only">Situaciones que requieren revisar una visa china desde España</caption><thead className="bg-slate-100 text-slate-900"><tr><th className="px-4 py-3 font-black">Situación</th><th className="px-4 py-3 font-black">Qué hacer</th><th className="px-4 py-3 font-black">No asumas</th></tr></thead><tbody className="divide-y divide-slate-200">{[["Trabajo, estudios o actividades periodísticas", "Confirma la categoría y presenta la solicitud antes de salir.", "Que la exención turística cubre otra actividad."], ["Estancia prevista de más de 30 días", "Revisa la visa adecuada con antelación.", "Que podrás ampliar la exención sin trámite previo."], ["Pasaporte temporal, de emergencia o documento de viaje", "Consulta la regla aplicable a ese documento.", "Que se trata igual que un pasaporte ordinario."], ["Dudas sobre la ruta o el motivo", "Confirma el caso con la fuente consular correspondiente.", "Que un resultado de buscador sustituye la fuente oficial."]].map(([situation, action, warning]) => <tr key={situation}><th scope="row" className="px-4 py-3 font-bold text-slate-900">{situation}</th><td className="px-4 py-3 text-slate-700">{action}</td><td className="px-4 py-3 text-slate-700">{warning}</td></tr>)}</tbody></table></div><p className="mt-5">Si necesitas visado, la Embajada indica que el proceso comienza en línea: selecciona España en el Centro de Visados, completa la solicitud, carga la documentación y espera la revisión previa. Consulta también nuestra <TrackedLink href="/es/visa-para-china/" eventLabel="spain_internal:visa_guide" className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2">guía general sobre visa y tránsito para China</TrackedLink> para distinguir los casos.</p></ContentSection>
+      <ContentSection title="Documentos y preparación antes de salir de España"><Checklist items={["Pasaporte ordinario válido y datos idénticos a los del pasaje.", "Itinerario completo, incluidas escalas, aeropuertos y equipaje facturado.", "Reserva del hotel, teléfono y dirección escrita en chino.", "Pruebas del motivo del viaje si la autoridad fronteriza las solicita.", "eSIM o roaming activado antes de volar, con instrucciones guardadas offline.", "Método de pago principal probado y alternativa física o efectivo en yuanes."]} /></ContentSection>
+      <ContentSection title="Internet, pagos y el primer trayecto"><p>Llegar con conexión y una alternativa de pago evita depender de configurar aplicaciones después de aterrizar. Descarga la dirección del hotel, la primera ruta y las reservas sin conexión. Si la llegada es nocturna, define antes de salir una alternativa al transporte público.</p><p className="mt-4">Revisa la <TrackedLink href="/es/internet-esim-china/" eventLabel="spain_internal:internet" className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2">guía de internet y eSIM en China</TrackedLink> y la <TrackedLink href="/es/lista-para-viajar-a-china/" eventLabel="spain_internal:checklist" className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2">lista final antes de viajar</TrackedLink> para no dejar esos pasos para el aeropuerto.</p></ContentSection>
+      <section className="my-8 rounded-lg border border-blue-200 bg-blue-50 p-5 sm:p-6"><div className="flex gap-3"><ShieldCheck className="mt-1 shrink-0 text-blue-700" size={22} aria-hidden="true" /><div><h2 className="text-2xl font-black text-blue-950">Organiza el plan de respaldo del primer día</h2><p className="mt-2 leading-7 text-blue-950">Reúne la conexión, el hotel, el pago y la primera ruta en una sola tarjeta antes de salir.</p><TrackedLink className="button-primary mt-5" href="/es/checker/" eventLabel="spain_article:checker_cta">Crear mi tarjeta de respaldo<ArrowRight size={18} aria-hidden="true" /></TrackedLink></div></div></section>
+      <InlineToolCta label="spain_inline" /><FAQSection items={faqs} />
+      <ContentSection title="Fuentes oficiales y fecha de revisión"><p>Esta guía fue revisada el 15 de octubre de 2026. Resume información pública para orientar la preparación; no sustituye una decisión consular o fronteriza. Confirma de nuevo la fuente oficial antes de reservar servicios no reembolsables o de volar.</p><div className="mt-5"><SourceLinks /></div></ContentSection>
+    </article></main><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }} /><SiteFooter /></div>;
 }
