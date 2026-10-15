@@ -43,7 +43,7 @@ const faqs = [
   {
     question: "¿Los argentinos necesitan visa para viajar a China?",
     answer:
-      "Según la información publicada por la Embajada de China en Argentina y revisada el 13 de septiembre de 2026, los titulares de pasaporte ordinario argentino pueden acogerse a una exención para determinados motivos y estadías de hasta 30 días, con vigencia anunciada hasta el 31 de diciembre de 2026. Verifica de nuevo la fuente oficial antes de salir, porque la regla depende del documento, el motivo y la fecha del viaje."
+      "Según la información publicada por la Embajada de China en Argentina y revisada el 15 de octubre de 2026, los titulares de pasaporte ordinario argentino pueden entrar sin visa por turismo, negocios, visitas, intercambios o tránsito de hasta 30 días. La vigencia anunciada llega hasta el 31 de diciembre de 2026. Verifica de nuevo la fuente oficial antes de salir, porque la regla depende del documento, el motivo y la fecha del viaje."
   },
   {
     question: "¿Qué viajes no están cubiertos por esa exención?",
@@ -73,9 +73,9 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Viajar a China desde Argentina: requisitos, visa y preparación",
+  title: "Viajar a China desde Argentina: visa y requisitos 2026",
   description:
-    "Qué preparar antes de viajar a China desde Argentina: requisitos, visa, vuelos, internet, pagos, hotel, transporte y fuentes oficiales.",
+    "¿Los argentinos necesitan visa para China? Requisitos de entrada, vuelos, internet, pagos y preparación del primer día.",
   authors: [{ name: "Equipo editorial de China Trip Tools" }],
   keywords: [
     "viajar a China desde Argentina",
@@ -90,9 +90,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     url: pagePath,
-    title: "Viajar a China desde Argentina: requisitos, visa y preparación",
+    title: "Viajar a China desde Argentina: visa y requisitos 2026",
     description:
-      "Una guía práctica para verificar la entrada y preparar vuelos, internet, pagos, hotel y transporte antes de llegar a China.",
+      "Confirma si necesitas visa y prepara vuelos, internet, pagos, hotel y transporte antes de llegar a China desde Argentina.",
     images: [
       {
         url: coverImage,
@@ -104,8 +104,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Viajar a China desde Argentina: guía de preparación",
-    description: "Requisitos, vuelos, internet, pagos y plan para el primer día en China.",
+    title: "Viajar a China desde Argentina: visa y requisitos",
+    description: "¿Los argentinos necesitan visa? Requisitos y plan para el primer día en China.",
     images: [coverImage]
   }
 };
@@ -159,12 +159,12 @@ export default function ArgentinaTravelPage() {
       {
         "@type": "Article",
         "@id": `${siteUrl}${pagePath}#article`,
-        headline: "Viajar a China desde Argentina: prepara tu llegada paso a paso",
+        headline: "Viajar a China desde Argentina: visa y requisitos 2026",
         description:
           "Guía práctica para verificar requisitos y preparar vuelos, internet, pagos, hotel y transporte antes de viajar desde Argentina a China.",
         image: `${siteUrl}${coverImage}`,
         datePublished: "2026-09-13",
-        dateModified: "2026-09-13",
+        dateModified: "2026-10-15",
         inLanguage: "es",
         isAccessibleForFree: true,
         mainEntityOfPage: `${siteUrl}${pagePath}`,
@@ -205,12 +205,12 @@ export default function ArgentinaTravelPage() {
       <main>
         <ArticleHero
           eyebrow="Guía para viajeros de Argentina"
-          title="Viajar a China desde Argentina: prepara tu llegada paso a paso"
-          description="Verifica qué regla de entrada aplica a tu viaje y deja listos el itinerario, la conexión, los pagos, el hotel y el transporte del primer día."
+          title="Viajar a China desde Argentina: ¿necesitas visa?"
+          description="Para pasaporte argentino, comprueba primero si tu viaje entra en la exención vigente; después deja listos el itinerario, la conexión, los pagos, el hotel y el transporte del primer día."
           ctaLabel="Crear mi tarjeta de respaldo"
           ctaEventLabel="argentina_article_hero"
-          reviewedAt="2026-09-13"
-          reviewedLabel="Revisado el 13 de septiembre de 2026"
+          reviewedAt="2026-10-15"
+          reviewedLabel="Revisado el 15 de octubre de 2026"
           image={{
             src: coverImage,
             alt: "Preparación de un viaje desde Argentina a China con pasaporte, itinerario con escala, teléfono y mapa",
@@ -225,9 +225,9 @@ export default function ArgentinaTravelPage() {
             <div className="flex gap-3">
               <Info className="mt-1 shrink-0 text-blue-700" size={22} aria-hidden="true" />
               <div>
-                <h2 id="respuesta-rapida" className="text-xl font-black text-blue-950">Respuesta rápida</h2>
+                <h2 id="respuesta-rapida" className="text-xl font-black text-blue-950">¿Los argentinos necesitan visa para China?</h2>
                 <p className="mt-2 leading-7 text-blue-950">
-                  Si viajas a China desde Argentina, comprueba primero tu pasaporte y la regla de entrada vigente para la fecha y el motivo del viaje. Después guarda el itinerario completo, las reservas, la dirección del hotel en chino y la ruta desde el aeropuerto. Antes de salir, prepara internet móvil, un método de pago y un plan B por si una app falla.
+                  Para turismo, negocios, visitas a familiares o amigos, intercambios y tránsito de hasta 30 días, los titulares de pasaporte ordinario argentino pueden entrar sin visa hasta el 31 de diciembre de 2026, según el aviso de la Embajada de China en Argentina. Para trabajo, estudios, actividades periodísticas, una estancia prevista de más de 30 días o un documento distinto del pasaporte ordinario, consulta la visa que corresponda antes de viajar.
                 </p>
               </div>
             </div>
@@ -268,9 +268,9 @@ export default function ArgentinaTravelPage() {
             </div>
           </ContentSection>
 
-          <ContentSection title="Visa y requisitos: confirma siempre la información oficial">
+          <ContentSection title="Visa para China desde Argentina: cuándo no la necesitas">
             <p>
-              <strong>A fecha del 13 de septiembre de 2026</strong>, la Embajada de China en Argentina informa que los titulares de pasaporte ordinario argentino pueden entrar sin visa para turismo, negocios, visitas a familiares o amigos, intercambios y tránsito, siempre que la estadía no supere los 30 días. La vigencia anunciada para Argentina es hasta las 24:00 del 31 de diciembre de 2026.
+              <strong>Revisado el 15 de octubre de 2026</strong>, la Embajada de China en Argentina informa que los titulares de pasaporte ordinario argentino pueden entrar sin visa para turismo, negocios, visitas a familiares o amigos, intercambios y tránsito, siempre que la estadía no supere los 30 días. La vigencia anunciada para Argentina es hasta las 24:00 del 31 de diciembre de 2026. No es necesario presentar una declaración previa ante la Embajada si cumples las condiciones de la exención.
             </p>
             <p className="mt-4">
               Esto no significa que todos los viajes estén cubiertos. La decisión final de entrada corresponde a las autoridades fronterizas. Trabajo, estudios, actividades periodísticas y estadías previstas de más de 30 días requieren revisar la visa correspondiente. Las preguntas frecuentes oficiales también recomiendan llevar documentos que demuestren el motivo del viaje, como pasajes, reservas de alojamiento o una invitación cuando corresponda.
