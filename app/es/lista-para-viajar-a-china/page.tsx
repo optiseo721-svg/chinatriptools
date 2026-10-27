@@ -81,6 +81,17 @@ export default function TravelChecklistPage() {
               una lista de preparación y no decide si puedes entrar, transitar o viajar sin visado.
             </p>
             <p className="mt-4">
+              Si todavía no has elegido fechas, compara primero la{" "}
+              <TrackedLink
+                href="/es/mejor-epoca-para-viajar-a-china/"
+                eventLabel="travel_checklist_internal:best_time"
+                className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-2"
+              >
+                mejor época para viajar a China según tu ruta
+              </TrackedLink>
+              {" "}y comprueba los festivos del año en que viajarás.
+            </p>
+            <p className="mt-4">
               Empieza por nuestra{` `}
               <TrackedLink
                 href="/es/visa-para-china/"
