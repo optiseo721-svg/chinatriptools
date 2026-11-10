@@ -13,6 +13,15 @@ The user addresses the project coordinator in the current chat. They do not need
 
 Only the coordinator advances a stage after its output is reviewable. Do not invent keyword metrics, official rules, user experiences, or screenshots. Preserve public URLs and crawlable content if user accounts are added later.
 
+## SEO safeguard for every site change
+
+- Preserve existing public URLs, crawlable page content, canonical targets, and relevant internal links unless a reviewed migration explicitly requires a change.
+- Before release, compare old and new page inventory; check titles, descriptions, canonical tags, indexability, sitemap entries, and navigation links. Test key paths in the preview build.
+- New directory or category pages must add a distinct navigation purpose and link to existing guides; avoid copying article text or creating competing pages for the same search intent.
+- After release, verify live responses and monitor GSC page and query data. A clean technical check cannot guarantee unchanged rankings, so investigate material declines rather than assuming zero SEO impact.
+- If a public URL must change, prepare an old-to-new URL map before release. Configure a server/CDN permanent redirect (301 or 308) for each old URL, update internal links, canonicals and sitemap, avoid redirect chains, then verify old and new URLs on production. Static export alone cannot serve these redirects; confirm the hosting layer supports them before changing any URL.
+- Keep old URL redirects in place long term and monitor indexing and traffic for both URLs after migration. A canonical tag or sitemap entry is not a substitute for a redirect.
+
 ## Twice-weekly review
 
 - Monday 11:00 Asia/Shanghai: Review coordinator reads the previous week's GSC and Bing organic-search data, the live page inventory, previous recommendations, and release outcomes. It asks Research to explain demand and page-query overlap, Fact check to flag changed official guidance, and QA to flag technical or content issues. It reconciles their findings into one prioritized plan for this week and a draft plan for next week. Each recommendation names evidence, the page to change, owner, expected outcome, and a measurement date.

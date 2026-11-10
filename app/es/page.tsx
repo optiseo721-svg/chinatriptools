@@ -110,6 +110,7 @@ export default function SpanishHomePage() {
               Empieza por la guía general y continúa con la información práctica de tu país de salida.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
+              <TrackedLink className="button-secondary" href="/es/guias/" eventName="home_internal_link" eventLabel="home_all_guides">Ver todas las guías</TrackedLink>
               <TrackedLink
                 className="button-secondary"
                 href="/es/visa-para-china/"

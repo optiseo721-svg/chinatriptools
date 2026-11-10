@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     "",
     "/es/",
+    "/es/guias/",
     "/es/checker/",
     "/es/lista-para-viajar-a-china/",
     "/es/internet-esim-china/",
@@ -25,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/es/cookies/"
   ].map((path) => ({
     url: `${siteUrl}${path}`,
-    lastModified: path === "/es/mejor-epoca-para-viajar-a-china/" ? new Date("2026-10-27") : path === "/es/trenes-en-china/" ? new Date("2026-10-19") : lastModified,
+    lastModified: path === "/es/guias/" ? new Date("2026-11-10") : path === "/es/mejor-epoca-para-viajar-a-china/" ? new Date("2026-10-27") : path === "/es/trenes-en-china/" ? new Date("2026-10-19") : lastModified,
     changeFrequency: path.includes("checker") ? "monthly" : "weekly",
     priority: path === "/es/" ? 1 : 0.8
   }));
