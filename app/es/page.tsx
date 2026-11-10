@@ -120,6 +120,7 @@ export default function SpanishHomePage() {
               </TrackedLink>
               <TrackedLink className="button-secondary" href="/es/como-pagar-en-china/" eventName="home_internal_link" eventLabel="home_payments_guide">Cómo pagar en China</TrackedLink>
               <TrackedLink className="button-secondary" href="/es/trenes-en-china/" eventName="home_internal_link" eventLabel="home_trains_guide">Trenes en China</TrackedLink>
+              <TrackedLink className="button-secondary" href="/es/enchufes-en-china/" eventName="home_internal_link" eventLabel="home_plugs_guide">Enchufes en China</TrackedLink>
               <TrackedLink
                 className="button-secondary"
                 href="/es/viajar-a-china-desde-mexico/"

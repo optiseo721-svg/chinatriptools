@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/es/checker/",
     "/es/lista-para-viajar-a-china/",
     "/es/internet-esim-china/",
+    "/es/enchufes-en-china/",
     "/es/como-pagar-en-china/",
     "/es/trenes-en-china/",
     "/es/mejor-epoca-para-viajar-a-china/",
