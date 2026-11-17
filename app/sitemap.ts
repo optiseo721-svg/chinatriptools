@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/es/enchufes-en-china/",
     "/es/como-pagar-en-china/",
     "/es/trenes-en-china/",
+    "/es/ruta-china-15-dias/",
     "/es/mejor-epoca-para-viajar-a-china/",
     "/es/visa-para-china/",
     "/es/viajar-a-china-desde-argentina/",
@@ -26,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/es/cookies/"
   ].map((path) => ({
     url: `${siteUrl}${path}`,
-    lastModified: path === "/es/guias/" ? new Date("2026-11-10") : path === "/es/mejor-epoca-para-viajar-a-china/" ? new Date("2026-10-27") : path === "/es/trenes-en-china/" ? new Date("2026-10-19") : lastModified,
+    lastModified: path === "/es/ruta-china-15-dias/" ? new Date("2026-11-17") : path === "/es/guias/" ? new Date("2026-11-10") : path === "/es/mejor-epoca-para-viajar-a-china/" ? new Date("2026-10-27") : path === "/es/trenes-en-china/" ? new Date("2026-10-19") : lastModified,
     changeFrequency: path.includes("checker") ? "monthly" : "weekly",
     priority: path === "/es/" ? 1 : 0.8
   }));

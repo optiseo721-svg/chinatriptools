@@ -21,7 +21,8 @@ export const guideGroups = [
     description: "Elige fechas y organiza tus desplazamientos por China.",
     guides: [
       { href: "/es/mejor-epoca-para-viajar-a-china/", title: "Mejor época para viajar a China", description: "Clima, regiones y fechas que conviene revisar." },
-      { href: "/es/trenes-en-china/", title: "Trenes en China", description: "Cómo preparar un trayecto en tren." }
+      { href: "/es/trenes-en-china/", title: "Trenes en China", description: "Cómo preparar un trayecto en tren." },
+      { href: "/es/ruta-china-15-dias/", title: "Ruta por China en 15 días", description: "Un recorrido por Beijing, Xi'an, Chengdu y Shanghái con días de traslado." }
     ]
   },
   {
