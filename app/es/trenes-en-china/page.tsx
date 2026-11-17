@@ -32,7 +32,7 @@ export default function TrainsInChinaPage() {
   const schema = {
     "@context": "https://schema.org", "@type": "Article", headline: title,
     mainEntityOfPage: url, image: `https://chinatriptools.com${cover}`, inLanguage: "es",
-    dateModified: "2026-10-19",
+    dateModified: "2026-11-17",
     author: { "@type": "Organization", name: "China Trip Tools", url: "https://chinatriptools.com/es/about/" }
   };
 
@@ -42,9 +42,9 @@ export default function TrainsInChinaPage() {
       <p className="eyebrow mt-6">Transporte entre ciudades</p>
       <h1 className="mt-3 text-3xl font-black leading-tight text-slate-950 sm:text-4xl">{title}</h1>
       <p className="mt-5 text-lg leading-8 text-slate-700">Para viajar en tren por China, empieza por elegir bien las estaciones de salida y llegada. Puedes comprar el billete en los canales oficiales de China Railway, como 12306, o en una agencia autorizada. Reserva con los datos de tu pasaporte y lleva ese mismo documento el día del viaje.</p>
-      <p className="mt-4 text-sm text-slate-500">Por el equipo editorial de China Trip Tools · Revisado el 19 de octubre de 2026 · Guía basada en fuentes oficiales y fotografías y capturas aportadas para esta página.</p>
+      <p className="mt-4 text-sm text-slate-500">Por el equipo editorial de China Trip Tools · Revisado el 17 de noviembre de 2026 · Guía basada en fuentes oficiales y fotografías y capturas aportadas para esta página.</p>
       <figure className="mt-7"><Image src={cover} alt="Tren de alta velocidad en una estación ferroviaria de China" width={1200} height={900} priority sizes="(max-width: 896px) 100vw, 896px" className="h-auto w-full rounded-lg" /><figcaption className="mt-2 text-xs text-slate-500">Estación y tren de alta velocidad en China. Imagen aportada para esta guía.</figcaption></figure>
-      <nav aria-label="Contenido" className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-brand-green">{[["elegir", "Elegir tren"], ["comprar", "Comprar billete"], ["estacion", "En la estación"], ["preguntas", "Preguntas"], ["fuentes", "Fuentes"]].map(([id, label]) => <a key={id} href={`#${id}`} className="underline underline-offset-4">{label}</a>)}</nav>
+      <nav aria-label="Contenido" className="mt-6 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-brand-green">{[["elegir", "Elegir tren"], ["comprar", "Comprar billete"], ["ventanilla", "Comprar en ventanilla"], ["estacion", "En la estación"], ["preguntas", "Preguntas"], ["fuentes", "Fuentes"]].map(([id, label]) => <a key={id} href={`#${id}`} className="underline underline-offset-4">{label}</a>)}</nav>
     </div></header>
     <article className="content-wrap max-w-4xl pb-10">
       <div id="elegir" className="scroll-mt-24"><ContentSection title="Elige el tren y comprueba ambas estaciones">
@@ -55,8 +55,12 @@ export default function TrainsInChinaPage() {
       <div id="comprar" className="scroll-mt-24"><ContentSection title="Cómo comprar un billete con pasaporte">
         <p><a href={sources[0].href} className="underline">China Railway</a> enumera 12306.cn, su aplicación, ventanillas y agencias autorizadas entre los canales de venta. Si usas 12306, crea la cuenta, añade al pasajero con su nombre y pasaporte tal como figuran en el documento, busca la ruta y la fecha, elige una salida y revisa los detalles antes de pagar. La <a href={sources[1].href} className="underline">guía oficial en español de Shanghái</a> describe el flujo de la aplicación.</p>
         <Checklist items={["Confirma la estación exacta de salida y la de llegada.", "Comprueba fecha, hora, número de tren y clase de asiento.", "Copia nombre y número de pasaporte sin abreviaturas ni cambios.", "Verifica el importe y espera a que el pedido indique que está confirmado."]} />
-        <p className="mt-5">Una pantalla de búsqueda no garantiza plaza. Si el pago falla, consulta el estado del pedido antes de repetirlo para evitar cargos duplicados. Si reservas con una agencia, comprueba sus condiciones y posibles cargos propios; China Railway advierte que no gestiona incidencias de venta de sitios ajenos a sus canales.</p>
+        <p className="mt-5">Una pantalla de búsqueda no garantiza plaza. La compra en línea puede requerir verificar la identidad del pasajero. Si el pago falla, consulta el estado del pedido antes de repetirlo para evitar cargos duplicados. Si reservas con una agencia, comprueba sus condiciones y posibles cargos propios; China Railway advierte que no gestiona incidencias de venta de sitios ajenos a sus canales.</p>
         <figure className="mt-6"><div className="mx-auto max-w-[370px]"><Image src="/images/articles/trenes-en-china/order-example.jpeg" alt="Ejemplo independiente de un pedido de tren de Shanghai Hongqiao a Xi'an Norte, con horario, estaciones, número de tren y acceso de control" width={1080} height={1350} sizes="(max-width: 420px) 85vw, 370px" className="h-auto w-full rounded-lg border border-slate-200" /></div><figcaption className="mx-auto mt-2 max-w-[620px] text-sm leading-6 text-slate-500">Ejemplo 2: pedido real antiguo de Shanghai Hongqiao a Xi&apos;an Norte, distinto de la búsqueda anterior. Los datos personales están ocultos. Corresponde a un viajero con documento chino; ilustra dónde comprobar tren, estaciones, horario y acceso, no el proceso de verificación con pasaporte extranjero ni las condiciones actuales.</figcaption></figure>
+      </ContentSection></div>
+      <div id="ventanilla" className="scroll-mt-24"><ContentSection title="Cómo comprar en la ventanilla de la estación">
+        <ol className="list-decimal space-y-2 pl-6"><li>Ve a la ventanilla de venta de billetes de una estación con tu pasaporte válido.</li><li>Indica la estación de salida, el destino y la fecha; pide que comprueben los trenes y las plazas disponibles.</li><li>Antes de pagar, verifica el nombre y el número de pasaporte, el tren, las estaciones, la fecha y el importe.</li></ol>
+        <p className="mt-4">China Railway y la <a href={sources[1].href} className="underline">guía oficial de Shanghái</a> confirman la compra en ventanilla con pasaporte. Consulta allí los métodos de pago aceptados; pueden variar y estas fuentes no garantizan uno concreto. Conserva los datos del viaje y lleva el mismo pasaporte al embarcar.</p>
       </ContentSection></div>
       <div id="estacion" className="scroll-mt-24"><ContentSection title="En la estación: seguridad, control y embarque">
         <p>Acude con margen para llegar a la estación correcta, pasar el control de seguridad y encontrar la sala y el acceso indicados. Lleva el mismo pasaporte utilizado en la reserva. Para los billetes electrónicos, la documentación oficial indica que el pasajero debe conservar la información del viaje y presentar el documento válido al entrar, salir y subir al tren. Si un lector automático no acepta el pasaporte, solicita el control manual.</p>
