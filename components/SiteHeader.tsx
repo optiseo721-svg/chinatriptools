@@ -1,6 +1,7 @@
 import { Check, ChevronDown, Globe, Menu } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 import { TrackedLink } from "./TrackedLink";
+import { SiteSearch } from "./SiteSearch";
 
 const guideLinks = [
   { href: "/es/guias/", label: "Todas las guías" },
@@ -76,7 +77,7 @@ function LanguageMenu({ mobile = false }: { mobile?: boolean }) {
 export function SiteHeader() {
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="content-wrap flex min-h-16 items-center justify-between gap-4 py-3">
+      <div className="content-wrap relative flex min-h-16 items-center justify-between gap-4 py-3">
         <BrandLogo href="/es/" />
         <nav aria-label="Navegación principal" className="hidden items-center gap-2 text-sm md:flex">
           <TrackedLink
@@ -88,9 +89,11 @@ export function SiteHeader() {
             Preparar mi viaje
           </TrackedLink>
           <GuideMenu />
+          <SiteSearch />
           <span aria-hidden="true" className="mx-1 h-6 w-px bg-slate-200" />
           <LanguageMenu />
         </nav>
+        <div className="ml-auto md:hidden"><SiteSearch mobile /></div>
         <details className="relative md:hidden">
           <summary
             className="flex size-11 cursor-pointer list-none items-center justify-center rounded-md border border-slate-200 bg-white text-slate-800 hover:bg-slate-50 [&::-webkit-details-marker]:hidden"
