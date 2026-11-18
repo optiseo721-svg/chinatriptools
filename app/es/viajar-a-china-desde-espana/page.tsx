@@ -27,7 +27,7 @@ const faqs = [
 ];
 
 export const metadata: Metadata = {
-  title: "Viajar a China desde España: visado y requisitos 2026",
+  title: "Viajar a China desde España: visado 2026",
   description: "¿Los españoles necesitan visado para China? Requisitos de entrada, exención de 30 días, trámite de visado, internet y preparación desde España.",
   authors: [{ name: "Equipo editorial de China Trip Tools" }],
   keywords: ["viajar a China desde España", "visado China España", "los españoles necesitan visado para China", "requisitos para viajar a China desde España", "visa China España"],
