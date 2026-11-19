@@ -1,0 +1,3 @@
+# Repository task instructions
+
+Before any project-specific change, read `E:\codex workspace\WORKSPACE_CONTEXT.md`, the current project workflow, and `SEO_MULTILINGUAL_RULES.md` in this repository. Preserve existing SEO, public URLs, and language boundaries. Test one step at a time; fix failures before proceeding. Use a test build and obtain user confirmation of a concrete result before production publication. After publication, verify critical live pages, true 404 responses, search, sitemap, and redirects. Keep work under `E:\codex workspace`.

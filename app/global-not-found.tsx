@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "China Trip Tools",
   description: "Herramientas prácticas para preparar tu viaje a China: internet, pagos, hotel, transporte y primer día.",
   icons: { icon: "/icon.png", apple: "/apple-touch-icon.png" },
-  alternates: { canonical: "/", languages: { es: "/es/" } },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "China Trip Tools",
     description: "Crea un plan de respaldo para tu primer día en China antes de aterrizar.",
