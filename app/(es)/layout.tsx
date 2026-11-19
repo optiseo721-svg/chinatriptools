@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { CookieConsent } from "@/components/CookieConsent";
-import "./globals.css";
+import "../globals.css";
 
 const siteUrl = "https://chinatriptools.com";
 const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || process.env.GA_MEASUREMENT_ID;

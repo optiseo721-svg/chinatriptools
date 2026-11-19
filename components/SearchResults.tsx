@@ -1,11 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import { searchSite } from "@/lib/site-search";
 
+function subscribe(callback: () => void) {
+  window.addEventListener("popstate", callback);
+  return () => window.removeEventListener("popstate", callback);
+}
+
+function getQuery() {
+  return new URLSearchParams(window.location.search).get("q") ?? "";
+}
+
 export function SearchResults() {
-  const [query, setQuery] = useState("");
-  useEffect(() => setQuery(new URLSearchParams(window.location.search).get("q") ?? ""), []);
+  const query = useSyncExternalStore(subscribe, getQuery, () => "");
   const results = searchSite(query);
   return <div className="content-wrap py-10 md:py-14">
     <h1 className="text-3xl font-black text-slate-950">Buscar en China Trip Tools</h1>
